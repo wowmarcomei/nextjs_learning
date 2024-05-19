@@ -67,6 +67,8 @@ The difference between **catch-all** and **optional catch-all** segments is that
 | `app/shop/[[...slug]]/page.js` | `/shop/a/b`   | `{ slug: ['a', 'b'] }`      |
 | `app/shop/[[...slug]]/page.js` | `/shop/a/b/c` | `{ slug: ['a', 'b', 'c'] }` |
 
+需要注意的是`[[...FolderName]`路由与`[...FolderName]`路由不能在同一个层级目录下。
+
 ## [TypeScript](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#typescript)
 
 When using TypeScript, you can add types for `params` depending on your configured route segment.
