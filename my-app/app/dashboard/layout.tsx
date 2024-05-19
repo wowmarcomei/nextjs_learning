@@ -11,6 +11,7 @@
 
 'use client'
 
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import Link from 'next/link'
 
@@ -18,10 +19,15 @@ export default function Layout({ children }
     : { children: React.ReactNode }
 ) {
   const [count, setCount] = useState(0)
+  const pathname = usePathname()
   return (
     <>
       <div>
-        <Link href="/dashboard/about">About</Link>
+        <Link 
+          className={`link ${pathname === '/dashboard' ? 'active' : ''}`}
+          href="/dashboard/about">
+          About
+        </Link>
         <br/>
         <Link href="/dashboard/settings">Settings</Link>
       </div>
